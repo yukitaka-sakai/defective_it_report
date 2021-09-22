@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210915100057) do
+ActiveRecord::Schema.define(version: 20210922035028) do
+
+  create_table "machines", force: :cascade do |t|
+    t.string "field_name"
+    t.string "area"
+    t.string "floor"
+    t.string "machine_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_name"], name: "index_machines_on_field_name"
+    t.index ["machine_name"], name: "index_machines_on_machine_name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
